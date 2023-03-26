@@ -2,11 +2,13 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Form, Button } from 'react-bootstrap';
 import { LOGIN_URL } from '../constants/api';
+import {useHistory } from 'react-router-dom';
 
 function LoginForm() {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     email: '',
-    password: '',
+    password: '',    
   });
 
   const handleChange = event => {
@@ -28,6 +30,7 @@ function LoginForm() {
           email: '',
           password: '',
         });
+        history.push('/members');
       })
       .catch(error => console.error(error));
   };
