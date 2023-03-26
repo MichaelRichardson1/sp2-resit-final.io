@@ -10,8 +10,8 @@ export default function LandingPage() {
 			<HtmlHead />
 			<NoNavHeader />
 			<div className="row">
-				<div className="col"><Link href="/visitors"><a>Visitors</a></Link></div>				
-				<div className="col"><Link href="/login"><a>Members</a></Link></div>
+				<div className="col"><Link href="/visitors">Visitors</Link></div>				
+				<div className="col"><Link href="/login">Members</Link></div>
 			</div>			
 			<Footer />		
 		</LayoutContainer>

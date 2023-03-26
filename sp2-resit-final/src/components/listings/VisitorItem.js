@@ -5,11 +5,11 @@ export default function VisitorItem({ title, description, endsAt }) {
 	
 	return (
 
-		<div class="item-card" style="width: 18rem;">
-            <div class="card-body">
-                <h4 class="card-title">{title}</h4>
-                <p class="card-text">{description}</p>
-                <p class="card-text">Bidding Ends: {endsAt}</p>
+		<div className="item-card" style={{ width: "18rem" }}>
+            <div className="card-body">
+                <h4 className="card-title">{title}</h4>
+                <p className="card-text">{description}</p>
+                <p className="card-text">Bidding Ends: {endsAt}</p>
                 <ListingCarousel />
             </div>
         </div>
@@ -19,6 +19,6 @@ export default function VisitorItem({ title, description, endsAt }) {
 
 VisitorItem.propTypes = {
 	title: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
+	description: PropTypes.string,
 	endsAt: PropTypes.string.isRequired,
 };

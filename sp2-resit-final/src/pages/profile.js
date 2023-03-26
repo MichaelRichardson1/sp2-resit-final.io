@@ -5,13 +5,15 @@ import Heading from '@/components/typography/Heading';
 import MemberHeader from '@/components/layout/MemberHeader';
 import AvatarUpdateForm from '@/components/forms/UpdateProfileForm';
 
-export default function LoginPage() {
+export default function ProfilePage() {
+	const handleAvatarUpdate = () => {};
+
 	return (
 		<LayoutContainer>
 			<HtmlHead />
 			<MemberHeader />
             <Heading content="Profile" />
-            <AvatarUpdateForm />
+            <AvatarUpdateForm onAvatarUpdate={handleAvatarUpdate} />
 			<Footer />		
 		</LayoutContainer>
 	);

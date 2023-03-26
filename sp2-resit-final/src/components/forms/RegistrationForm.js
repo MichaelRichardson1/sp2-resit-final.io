@@ -1,18 +1,19 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { yupResolver } from '@hookform/resolvers/yup';
 import axios from "axios";
 import { REGISTER_URL } from "../constants/api";
 
 const schema = yup.object().shape({
-  name: yup.string().required().matches(/^[a-zA-Z0-9_]*$/, "Name must not contain punctuation, underscore is allowed."),
+  name: yup.string().required().matches(/^[a-zA-Z0-9_]*$/, "Name must not contain punctuation, underscore is required between names."),
   email: yup.string().email("Email must be in a valid format").matches(/(stud\.)?noroff\.no$/, "Email must be a noroff.no or stud.noroff.no email address").required("Email is required"),
   password: yup.string().required().min(6),
   confirmPassword: yup.string().oneOf([yup.ref("password"), null])
 });
 
 function RegistrationForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(schema)
   });
 
@@ -20,6 +21,7 @@ function RegistrationForm() {
     try {
       const response = await axios.post(REGISTER_URL, data);
       console.log(response.data);
+      reset();
     } catch (error) {
       console.error(error);
     }
@@ -47,7 +49,7 @@ function RegistrationForm() {
         <input type="password" {...register("confirmPassword")} />
         {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
       </div>
-      <button type="submit">Register</button>
+      <button className="proceed" type="submit">Register</button>
     </form>
   );
 }

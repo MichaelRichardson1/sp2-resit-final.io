@@ -1,18 +1,15 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 
-function LogoutButton() {
-  const history = useHistory();
-
+function LogoutButton({ redirectToIndex }) {
   const handleLogout = () => {
     
-    history.push("/");
-
+    redirectToIndex();
+    
   };
 
   return (
-    <Button onClick={handleLogout}>
+    <Button onClick={handleLogout} className="proceed">
       Logout
     </Button>
   );

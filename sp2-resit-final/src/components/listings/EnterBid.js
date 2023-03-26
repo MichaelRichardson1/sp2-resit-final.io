@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Button } from "react-bootstrap";
 import axios from "axios";
-import { BIDS_URL } from "../constants/api";
+import { BIDS_URL, LOGIN_URL } from "../constants/api";
 
 function BidForm({ id }) {
   const [amount, setBidAmount] = useState("");
+  const [accessToken, setAccessToken] = useState("");
+
+  useEffect(() => {    
+    axios.get(LOGIN_URL)
+      .then(response => {
+        setAccessToken(response.data.accessToken);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -37,7 +48,7 @@ function BidForm({ id }) {
           onChange={(event) => setBidAmount(event.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="proceed">
         Place Bid
       </Button>
     </Form>

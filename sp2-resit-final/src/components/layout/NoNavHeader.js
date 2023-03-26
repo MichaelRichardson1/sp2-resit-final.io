@@ -7,7 +7,7 @@ export default function NoNavHeader({}) {
 			<div className="container-header">
                 <div className="row">
                     <div className="col">
-                        <Link href="/"><Image src="../../images/auction-site-logo.png" alt="logo" width={75} height={75} /></Link>
+                        <Link href="/"><Image src="/images/auction-site-logo.png" alt="logo" width={75} height={75} /></Link>
                     </div>
                     <div className="col">
                         <p className="site-name">Digibidder</p>

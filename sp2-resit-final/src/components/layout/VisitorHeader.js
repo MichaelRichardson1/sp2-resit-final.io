@@ -7,13 +7,16 @@ export default function VisitorHeader({}) {
 			<div className="container-header">
                 <div className="row">
                     <div className="col">
-                        <Image src="../../images/auction-site-logo.png" alt="logo" width={75} height={75} />
+                        <Image src="/images/auction-site-logo.png" alt="logo" width={75} height={75} />
                     </div>
                     <div className="col">
                         <p className="site-name">Digibidder</p>
                     </div>
                     <div className="col">
-                        <Link href="/register"><a>Register</a></Link>
+                        <Link href="/register">Register</Link>
+                    </div>	
+                    <div className="col">
+                        <Link href="/login">Login</Link>
                     </div>			
                 </div>
             </div>

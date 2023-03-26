@@ -2,13 +2,15 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Form, Button } from 'react-bootstrap';
 import { LOGIN_URL } from '../constants/api';
-import {useHistory } from 'react-router-dom';
+
 
 function LoginForm() {
-  const history = useHistory();
+  
   const [formData, setFormData] = useState({
+
     email: '',
-    password: '',    
+    password: '',
+    
   });
 
   const handleChange = event => {
@@ -20,17 +22,16 @@ function LoginForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-
+  
     axios.post(LOGIN_URL, formData)
       .then(response => {
-        
         localStorage.setItem('authToken', response.data.token);
-        
         setFormData({
           email: '',
           password: '',
         });
-        history.push('/members');
+        
+        window.location.href = '/members';
       })
       .catch(error => console.error(error));
   };
@@ -57,7 +58,7 @@ function LoginForm() {
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">Login</Button>
+      <Button variant="primary" type="submit" className='proceed'>Login</Button>
     </Form>
   );
 }

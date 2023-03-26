@@ -1,0 +1,32 @@
+h1, h2, h3, h4, h5 {
+    font-family: $font-primary;
+    color: $primary-font
+}
+
+Link, p, Button, button {
+    font-family: $font-secondary;
+}
+
+Link, p {
+    color: $primary-font;
+}
+
+Button, button {
+    color: $white;
+}
+
+Button.proceed, button.proceed {
+    background-color: $proceed-bg;
+}
+Button.view, button.view {
+    background-color: $view-bg;
+}
+
+.disclaimer {
+    background-color: $secondary-bg;
+    color: $body-bg;
+}
+
+.container-header, .container-footer {
+    background-color: $header-bg;
+}

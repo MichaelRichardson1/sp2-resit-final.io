@@ -11,19 +11,22 @@ function ListingCarousel() {
     fetch(LISTINGS_URL)
       .then(response => response.json())
       .then(data => setImages(data));
-
+      
   }, []);
 
   return (
 
     <Carousel>
-      {images.map(image => (
-
-        <Carousel.Item key={image.id}>
-          <Image src={image.media} alt="item image" />          
+      {images.map(image => {
+        const imageUrl = new URL(image.media, LISTINGS_URL).href;
+        return (
+        <Carousel.Item key={image.id} style={{ position: 'relative' }}>
+          <div style={{ height: '100px' }}>
+            <Image src={imageUrl} alt="item image" fill objectFit="cover"/>   
+          </div>       
         </Carousel.Item>
-        
-      ))}
+        );
+        })}
     </Carousel>
 
   );

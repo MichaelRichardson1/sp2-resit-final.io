@@ -6,7 +6,7 @@ import MemberHeader from '@/components/layout/MemberHeader';
 import CreateListingForm from '@/components/forms/CreateListingForm';
 
 
-export default function LoginPage() {
+export default function CreateListingPage() {
 	return (
 		<LayoutContainer>
 			<HtmlHead />

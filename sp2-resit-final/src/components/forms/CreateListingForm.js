@@ -70,7 +70,7 @@ function CreateListingForm({ onListingCreate }) {
           onChange={(event) => setMedia(event.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className='proceed'>
         Submit
       </Button>
     </Form>

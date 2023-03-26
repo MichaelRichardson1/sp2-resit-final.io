@@ -36,10 +36,10 @@ function AvatarUpdateForm({ onAvatarUpdate }) {
               type="text"
               placeholder="Enter new avatar URL"
               value={avatar}
-              onChange={(event) => setAvatarUrl(event.target.value)}
+              onChange={(event) => setAvatar(event.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" className='proceed'>
             Update
           </Button>
         </Form>
