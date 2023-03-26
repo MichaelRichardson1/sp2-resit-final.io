@@ -25,3 +25,5 @@ Would have liked to have tested the final two points, but I think the 401 error 
 Would have also liked to finish the styling off, ensure all code was functional and add a few extra bits onto the site. Like displaying the avatar of the user for example in the various headers.
 
 There are multiple different header, listing and item components to account for the different account types, in this case, visitors and members. 
+
+Some headers have more content than others, as many of the options are not needed for both account types. Unnecessary links for example were removed.
